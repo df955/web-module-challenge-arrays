@@ -47,7 +47,7 @@ Use the copy function below to do the following:
 
 function copy(copyOfFlavors){
 
-    return  copyOfFlavors;
+    return copyOfFlavors;
 
 }
 
@@ -193,9 +193,19 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+function getAverageWordLength(originalFlavors){
+    var wordCount;
+    var flavorCount = [];
+    for(let i = 0; i < originalFlavors.length; i++){
+        wordCount =originalFlavors[i].split(" ").length
+        flavorCount.push(wordCount);    
+    }
+
+    return flavorCount;
 }
+
+console.log(getAverageWordLength(originalFlavors));
+
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
@@ -211,11 +221,21 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(/*code here*/){
-    /*code here*/
-}
+function getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors){
+    var randomFlavors = [];
+    var finalFlavors=[];
+    const combinedFlavors = [].concat(regionalFlavors, seasonalFlavors, newFlavors. originalFlavors);
+    randomFlavors = combinedFlavors.sort(function(a,b){return b - a});
+    for( let i = 0; i < 31; i++){
+        finalFlavors.push(randomFlavors[i]);
 
-// NEW DATA ARRAYS FOR STRETCH 2 ⬇️
+    }
+    return finalFlavors;
+
+} 
+console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
+
+
 const newFlavors = [
     "Date night",
     "U.S.S Butterscotch (Stranger Things special)",
